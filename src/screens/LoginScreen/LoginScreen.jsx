@@ -11,6 +11,7 @@ import { useTheme } from '@react-navigation/native';
 import * as Animatable from 'react-native-animatable';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { LinearGradient } from 'expo-linear-gradient';
+import { NavigationContainer, StackActions } from '@react-navigation/native';
 
 
 
@@ -50,7 +51,8 @@ const LogoScreen = ({navigation}) => {
                 </View>
 
                 <View style={styles.button}>
-                    <TouchableOpacity onPress={()=>navigation.navigate('ShopNavigator')}>
+                    <TouchableOpacity onPress={()=>navigation.dispatch(
+                        StackActions.replace('ShopNavigator'))}>
                         <LinearGradient colors={['#08d4c4', '#01ab9d']} style={styles.signIn}>
                                 <Text style={styles.textSign}>Log In</Text>
                         </LinearGradient>

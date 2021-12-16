@@ -44,6 +44,7 @@ export default function App() {
         <Stack.Screen
           name="ShopNavigator"
           component={ShopNavigator}
+          options={{headerShown: false}}
         />
       </Stack.Navigator>
       </NavigationContainer>
