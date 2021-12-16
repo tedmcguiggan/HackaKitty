@@ -1,10 +1,10 @@
 import React from 'react';
-import { FlatList, Text, Platform } from 'react-native';
+import { FlatList } from 'react-native';
 import { useSelector } from 'react-redux';
 import OrderItem from '../../components/shop/OrderItem';
 
 const OrderHistoryScreen = ()=> {
-    const orders = useSelector(state => state.orders.orders);
+    const orders = useSelector(state => state.order.orders);
 
     return (
       <FlatList
