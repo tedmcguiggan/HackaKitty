@@ -6,6 +6,8 @@ import CartScreen from "../src/screens/CartScreen/CartScreen";
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import PaymentScreen from "../src/screens/PaymentScreen/PaymentScreen";
+import AddToMenuScreen from "../src/screens/AddToMenuScreen/AddToMenuScreen"
+import { Button } from 'react-native';
 
 const Tab = createBottomTabNavigator();
 const HomeStack = createNativeStackNavigator();
@@ -20,10 +22,18 @@ const CartStackScreen = props => {
   );
 }
 
-const HomeStackScreen = props => {
+const HomeStackScreen = ({navigation}) => {
   return (
     <HomeStack.Navigator>
-      <HomeStack.Screen name="Home" component={HomeScreen} />
+      <HomeStack.Screen name="Home" component={HomeScreen} options={{
+          headerRight: () => (
+            <Button
+            onPress={() => navigation.navigate('Add To Menu')}
+            title="Add"
+            />
+          )
+        }}/>
+      <HomeStack.Screen name="Add To Menu" component={AddToMenuScreen} />
     </HomeStack.Navigator>
   );
 }
