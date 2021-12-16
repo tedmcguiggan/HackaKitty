@@ -8,7 +8,7 @@ const Tab = createBottomTabNavigator();
 
 const ShopNavigator = props => {
   return (
-    <NavigationContainer>
+    <NavigationContainer independent={true}>
       <Tab.Navigator>
         <Tab.Screen name="Menu" component={HomeScreen} />
         <Tab.Screen name="Cart" component={CartScreen} />
