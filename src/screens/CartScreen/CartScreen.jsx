@@ -48,7 +48,7 @@ const CartScreen = ({navigation}) => {
         </Text>
         <Button
           title="Order Now"
-          onPress={()=>navigation.navigate('PaymentScreen')}
+          onPress={()=>navigation.navigate('Payment')}
           disabled={cartItems.length === 0}
         />
       </View>
