@@ -4,16 +4,12 @@ import {
     Dimensions,
     StyleSheet,
     View,
-    StatusBar,
-    Image,
     TouchableOpacity} from 'react-native';
 import { useTheme } from '@react-navigation/native';
 import * as Animatable from 'react-native-animatable';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { LinearGradient } from 'expo-linear-gradient';
-import { NavigationContainer, StackActions } from '@react-navigation/native';
-
-
+import { StackActions } from '@react-navigation/native';
 
 
 
@@ -22,7 +18,6 @@ const LogoScreen = ({navigation}) => {
 
     return (
         <View style={styles.container}>
-            <StatusBar backgroundColor='#472fa1' barStyle="dark-content" hidden-={false}/>
             <View style={styles.header}>
                 <Animatable.Image 
                     animation="bounceIn"

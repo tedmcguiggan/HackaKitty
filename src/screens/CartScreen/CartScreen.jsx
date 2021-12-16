@@ -4,10 +4,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import CartItem from '../../components/shop/CartItem';
 import * as cartActions from '../../../store/actions/cart';
 
-
-const CartScreen = props => {
+const CartScreen = ({navigation}) => {
     const cartTotalAmount = useSelector(state => state.cart.totalAmount);
     const cartItems = useSelector(state => {
+
       const transformedCartItems = [];
       for (const key in state.cart.items) {
         transformedCartItems.push({
@@ -26,7 +26,7 @@ const CartScreen = props => {
     const dispatch = useDispatch();
   
     return (
-      <View style={styles.screen}>
+    <View style={styles.screen}>
       <FlatList
         data={cartItems}
         keyExtractor={item => item.productId}
@@ -48,6 +48,7 @@ const CartScreen = props => {
         </Text>
         <Button
           title="Order Now"
+          onPress={()=>navigation.navigate('PaymentScreen')}
           disabled={cartItems.length === 0}
         />
       </View>
