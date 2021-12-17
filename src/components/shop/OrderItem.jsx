@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
-import CartItem from './CartItem';
+import DetailItem from './DetailItem';
 
 const OrderItem = props => {
   const [showDetails, setShowDetails] = useState(false);
@@ -20,12 +20,13 @@ const OrderItem = props => {
       {showDetails && (
         <View style={styles.detailItems}>
           {props.items.map(cartItem => (
-            <CartItem
+            <DetailItem
               key={cartItem.productId}
               quantity={cartItem.quantity}
               amount={cartItem.sum}
               title={cartItem.productTitle}
             />
+            
           ))}
         </View>
       )}

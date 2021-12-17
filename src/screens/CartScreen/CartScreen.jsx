@@ -3,7 +3,6 @@ import { View, FlatList, StyleSheet, Text, Button} from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import CartItem from '../../components/shop/CartItem';
 import * as cartActions from '../../../store/actions/cart';
-import * as ordersActions from '../../../store/actions/orders'
 
 const CartScreen = ({navigation}) => {
     const cartTotalAmount = useSelector(state => state.cart.totalAmount);
@@ -48,14 +47,9 @@ const CartScreen = ({navigation}) => {
           <Text style={styles.amount}>${cartTotalAmount.toFixed(2)}</Text>
         </Text>
         <Button
-          title="Order Now"
-          onPress={() => {
-            dispatch(ordersActions.addOrder(cartItems, cartTotalAmount));
-          }}
-          // onPress={() => 
-          //   navigation.navigate('Payment')
-          // }
+          title="Check Out"
           disabled={cartItems.length === 0}
+          onPress={()=>navigation.navigate('Payment')}
         />
       </View>
     </View>

@@ -39,8 +39,7 @@ const HomeStackScreen = ({navigation}) => {
           headerRight: () => (
             <Button
             onPress={() => navigation.navigate('Add To Menu')}
-            title="Add"
-            color="blue"
+            title="Add Products"
             />
           )
         }}/>

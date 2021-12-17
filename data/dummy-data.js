@@ -1,53 +1,53 @@
 const DATA = [
   {
     id: 1,
-    title: 'Pastas',
-    price: 100
+    title: 'Pasta',
+    price: 13.99
   },
   {
     id: 2,
-    title: 'Steaks',
-    price: 100
+    title: 'Steak',
+    price: 21.99
   },
   {
     id: 3,
-    title: 'Hamburgers',
-    price: 100
+    title: 'Hamburger',
+    price: 10.99
   },
   {
     id: 4,
-    title: 'Cheese Burgers',
-    price: 100
+    title: 'Cheese Burger',
+    price: 8.50
   },
   {
     id: 5,
-    title: 'Burittos',
-    price: 100
+    title: 'Buritto',
+    price: 9.80
   },
   {
     id: 6,
-    title: 'Tacos',
-    price: 100
+    title: 'Chicken Taco',
+    price: 3.50
   },
   {
     id: 7,
     title: 'Bulgogi',
-    price: 100
+    price: 9.89
   },
   {
     id: 8,
-    title: 'Chicken Rice',
-    price: 100
+    title: 'Beef Taco',
+    price: 10.99
   },
   {
     id: 9,
     title: 'Tandoori',
-    price: 100
+    price: 12.29
   },
   {
     id: 10,
     title: 'Cheese Naan',
-    price: 100
+    price: 3.49
   },
 ];
 
