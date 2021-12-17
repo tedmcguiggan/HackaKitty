@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import OrderItem from '../../components/shop/OrderItem';
 
 const OrderHistoryScreen = ()=> {
-    const orders = useSelector(state => state.orders.orders);
+    const orders = useSelector(state => state.order.orders);
 
     return (
       <FlatList
