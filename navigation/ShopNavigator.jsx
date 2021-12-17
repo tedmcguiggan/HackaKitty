@@ -8,10 +8,20 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import PaymentScreen from "../src/screens/PaymentScreen/PaymentScreen";
 import AddToMenuScreen from "../src/screens/AddToMenuScreen/AddToMenuScreen"
 import { Button } from 'react-native';
+import OrderHistoryScreen from "../src/screens/OrderHistoryScreen/OrderHistoryScreen";
 
 const Tab = createBottomTabNavigator();
 const HomeStack = createNativeStackNavigator();
 const CartStack = createNativeStackNavigator();
+const OrderHistoryStack = createNativeStackNavigator();
+
+const OrderHistoryStackScreen = props => {
+  return (
+    <OrderHistoryStack.Navigator>
+      <OrderHistoryStack.Screen name="Placed Orders" component={OrderHistoryScreen} />
+    </OrderHistoryStack.Navigator>
+  );
+}
 
 const CartStackScreen = props => {
   return (
@@ -29,7 +39,7 @@ const HomeStackScreen = ({navigation}) => {
           headerRight: () => (
             <Button
             onPress={() => navigation.navigate('Add To Menu')}
-            title="Add"
+            title="Add Products"
             />
           )
         }}/>
@@ -50,6 +60,8 @@ const ShopNavigator = () => {
             iconName = 'restaurant'
           } else if (route.name === 'Cart') {
             iconName = 'cart'
+          } else if (route.name === 'Order History') {
+            iconName = 'time'
           }
           return <Ionicons name={iconName} size={size} color={color} />;
         },
@@ -59,6 +71,7 @@ const ShopNavigator = () => {
       >
         <Tab.Screen name="Menu" component={HomeStackScreen}/>
         <Tab.Screen name="Cart" component={CartStackScreen}/>
+        <Tab.Screen name="Order History" component={OrderHistoryStackScreen}/>
       </Tab.Navigator>
     </NavigationContainer>
   );

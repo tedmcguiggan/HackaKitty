@@ -7,10 +7,11 @@ import LoginScreen from './src/screens/LoginScreen/LoginScreen'
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import { StatusBar} from 'react-native';
-
+import ordersReducer from './store/reducers/orders';
 
 const rootReducer = combineReducers({
-  cart: cartReducer
+  cart: cartReducer,
+  order: ordersReducer
 });
 
 const store = createStore(rootReducer);

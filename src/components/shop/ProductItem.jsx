@@ -16,7 +16,7 @@ const ProductItem = props => {
           <Text style={styles.price}>${props.price.toFixed(2)}</Text>
         </View>
         <Button
-          title="add to cart"
+          title="Add To Cart"
           onPress={props.onAddToCart}
         />
       </View>

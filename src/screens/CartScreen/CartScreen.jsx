@@ -47,9 +47,9 @@ const CartScreen = ({navigation}) => {
           <Text style={styles.amount}>${cartTotalAmount.toFixed(2)}</Text>
         </Text>
         <Button
-          title="Order Now"
-          onPress={()=>navigation.navigate('Payment')}
+          title="Check Out"
           disabled={cartItems.length === 0}
+          onPress={()=>navigation.navigate('Payment')}
         />
       </View>
     </View>
